@@ -49,4 +49,10 @@ public class PokemonController {
         return new PokemonResponse(updatedPokemon);
     }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletePokemon(@PathVariable long id) {
+        pokemonService.deletePokemon(id);
+    }
+
 }

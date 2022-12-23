@@ -47,6 +47,15 @@ public class PokemonService {
         return pokemonRepository.save(updatedPokemon);
     }
 
+    public void deletePokemon(long pokemonId) {
+
+        if (pokemonRepository.existsById(pokemonId)) {
+            pokemonRepository.deleteById(pokemonId);
+        } else {
+            throw new ResourceNotFoundException("Pokemon id not found");
+        }
+    }
+
     private void assignAssociations(PokemonRequest pokemonRequest, Pokemon pokemon) {
         Region region = regionRepository.findById(pokemonRequest.getRegion().getId()).orElseThrow(() ->
                 new UnprocessableEntityException("Region ID not found"));
@@ -60,4 +69,5 @@ public class PokemonService {
         pokemon.setPrimaryType(primaryType);
         pokemon.setSecondaryType(secondaryType);
     }
+
 }
