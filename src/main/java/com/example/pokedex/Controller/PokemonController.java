@@ -40,4 +40,13 @@ public class PokemonController {
 
         return new PokemonResponse(savedPokemon);
     }
+
+    @PutMapping("/{id}")
+    public PokemonResponse updateTeacher(@PathVariable long id, @Valid @RequestBody PokemonRequest pokemonRequest){
+
+        Pokemon updatedPokemon = pokemonService.updatePokemon(id, pokemonRequest);
+
+        return new PokemonResponse(updatedPokemon);
+    }
+
 }

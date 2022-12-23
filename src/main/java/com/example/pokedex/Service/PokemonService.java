@@ -1,14 +1,13 @@
 package com.example.pokedex.Service;
 
 import com.example.pokedex.Entity.*;
-import com.example.pokedex.Exception.UnprocessableEntityException;
+import com.example.pokedex.Exception.*;
 import com.example.pokedex.Repository.*;
 import com.example.pokedex.Request.PokemonRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PokemonService {
@@ -29,6 +28,26 @@ public class PokemonService {
     public Pokemon addPokemon(PokemonRequest pokemonRequest) {
 
         Pokemon pokemon = new Pokemon(pokemonRequest);
+        assignAssociations(pokemonRequest, pokemon);
+
+
+        return pokemonRepository.save(pokemon);
+    }
+
+    public Pokemon updatePokemon(long pokemonId, PokemonRequest pokemonRequest) {
+
+        Pokemon pokemon = pokemonRepository.findById(pokemonId).orElseThrow(() ->
+                new ResourceNotFoundException("Pokemon ID not found"));
+
+        Pokemon updatedPokemon = new Pokemon(pokemonRequest);
+        assignAssociations(pokemonRequest, updatedPokemon);
+
+        updatedPokemon.setId(pokemonId);
+
+        return pokemonRepository.save(updatedPokemon);
+    }
+
+    private void assignAssociations(PokemonRequest pokemonRequest, Pokemon pokemon) {
         Region region = regionRepository.findById(pokemonRequest.getRegion().getId()).orElseThrow(() ->
                 new UnprocessableEntityException("Region ID not found"));
 
@@ -40,19 +59,5 @@ public class PokemonService {
         pokemon.setRegion(region);
         pokemon.setPrimaryType(primaryType);
         pokemon.setSecondaryType(secondaryType);
-
-
-        return pokemonRepository.save(pokemon);
-    }
-
-    public Pokemon updateTeacher(long pokemonId, PokemonRequest pokemonRequest) {
-
-        pokemonRepository.findById(pokemonId);
-                //.orElseThrow(() -> new ResourceNotFoundException("Pokemon ID is no found. "));
-
-        Pokemon pokemonToBeUpdated = new Pokemon();
-        pokemonToBeUpdated.setId(pokemonId);
-
-        return pokemonRepository.save(pokemonToBeUpdated);
     }
 }
