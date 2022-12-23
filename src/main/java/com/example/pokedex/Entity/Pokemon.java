@@ -28,9 +28,6 @@ public class Pokemon {
     @JoinColumn(name = "secondary_type_id")
     private Type secondaryType;
 
-    @OneToOne
-    @JoinColumn(name = "tertiary_type_id")
-    private Type tertiaryType;
 
     @ManyToOne
     @JoinColumn(name = "region_id")
