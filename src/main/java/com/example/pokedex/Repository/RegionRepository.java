@@ -1,6 +1,5 @@
 package com.example.pokedex.Repository;
 
-import com.example.pokedex.Entity.Pokemon;
 import com.example.pokedex.Entity.Region;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

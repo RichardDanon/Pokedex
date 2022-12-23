@@ -1,6 +1,8 @@
 package com.example.pokedex.Entity;
 
 
+import com.example.pokedex.Request.RegionRequest;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Region {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,5 +27,9 @@ public class Region {
 
     @OneToMany
     private List<Pokemon> pokemon;
+
+    public Region(RegionRequest regionRequest){
+        name = regionRequest.getName();
+    }
 
 }

@@ -19,7 +19,9 @@ public class PokemonResponse {
         id = pokemon.getId();
         name = pokemon.getName();
         primaryType = new TypeResponse(pokemon.getPrimaryType());
-        secondaryType =  new TypeResponse(pokemon.getSecondaryType());
+        if(pokemon.getSecondaryType() != null)
+            secondaryType =  new TypeResponse(pokemon.getSecondaryType());
+
         region = new RegionResponse(pokemon.getRegion());
     }
 }

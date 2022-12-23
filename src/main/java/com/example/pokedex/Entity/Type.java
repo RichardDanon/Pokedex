@@ -1,6 +1,8 @@
 package com.example.pokedex.Entity;
 
 
+import com.example.pokedex.Request.TypeRequest;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +13,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Type {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,4 +28,9 @@ public class Type {
     @Column(name = "icon", nullable = false)
     private String icon;
 
+    public Type(TypeRequest typeRequest){
+        name = typeRequest.getName();
+        color = typeRequest.getColor();
+        icon = typeRequest.getIcon();
+    }
 }

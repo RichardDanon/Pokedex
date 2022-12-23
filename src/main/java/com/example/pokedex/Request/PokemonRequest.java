@@ -17,9 +17,9 @@ public class PokemonRequest {
     public String name;
 
     @NotNull
-    public Integer primaryType;
+    public ExistingEntityRequest primaryType;
 
-    public Integer secondaryType;
+    public ExistingEntityRequest secondaryType;
 
     //Because they will already exist
     @NotNull

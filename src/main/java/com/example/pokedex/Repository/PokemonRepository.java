@@ -13,9 +13,9 @@ public interface PokemonRepository extends CrudRepository<Pokemon,Long> {
 
     public List<Pokemon> findAllByNameIgnoreCase (String name);
 
-    public List<Pokemon> findAllByTypeIgnoreCase (Type type);
+    public List<Pokemon> findAllByPrimaryTypeOrSecondaryType (Integer id, Integer secondaryId);
 
-    public List<Pokemon> findAllByRegionIgnoreCase (Region region);
+    public List<Pokemon> findAllByRegion (Region region);
 
 
 }

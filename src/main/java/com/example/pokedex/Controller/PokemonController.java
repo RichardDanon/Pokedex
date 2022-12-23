@@ -1,28 +1,43 @@
 package com.example.pokedex.Controller;
 
 
+import com.example.pokedex.Entity.*;
 import com.example.pokedex.Request.PokemonRequest;
 import com.example.pokedex.Response.PokemonResponse;
+import com.example.pokedex.Service.PokemonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/pokemons")
+@RequestMapping("/api/pokemon")
 public class PokemonController {
+    @Autowired
+    PokemonService pokemonService;
 
     @GetMapping
-    public List<PokemonResponse> getAllPokemons(@RequestParam(required = false) String pokemonName){
+    public List<PokemonResponse> getAllPokemon(){
 
-        return null; //Place Holder
+        List<Pokemon> pokemons = pokemonService.getAllPokemon();
+        List<PokemonResponse> pokemonResponses = new ArrayList<>();
+
+        pokemons.forEach(pokemon -> {
+            PokemonResponse pokemonResponse = new PokemonResponse(pokemon);
+            pokemonResponses.add(pokemonResponse);
+        });
+
+        return pokemonResponses;
     }
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public PokemonResponse addPokemon(@Valid @RequestBody PokemonRequest teacherRequest){
+    public PokemonResponse addPokemon(@Valid @RequestBody PokemonRequest pokemonRequest){
 
-        return null; //Place Holder
+        Pokemon savedPokemon = pokemonService.addPokemon(pokemonRequest);
 
+        return new PokemonResponse(savedPokemon);
     }
 }

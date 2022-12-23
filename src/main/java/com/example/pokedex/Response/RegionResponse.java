@@ -11,11 +11,9 @@ import java.util.List;
 public class RegionResponse {
     private long id;
     private String name;
-    private List<Pokemon> pokemon;
 
     public RegionResponse(Region region){
         id = region.getId();
         name = region.getName();
-        pokemon = region.getPokemon();
     }
 }
