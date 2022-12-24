@@ -1,11 +1,8 @@
 package com.example.pokedex.Repository;
 
-import com.example.pokedex.Entity.Pokemon;
+import com.example.pokedex.Entity.*;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-import javax.swing.plaf.synth.Region;
-import java.lang.reflect.Type;
 import java.util.List;
 
 @Repository
