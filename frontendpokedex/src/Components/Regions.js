@@ -38,11 +38,11 @@ function Region() {
           {
           regions.map(region => {
               return(
-      <div className="card width: 18rem ;">
-        <div className="card-body">
-          <h5 className="card-header">{region.name}</h5>
-          <p className="card-title">Go see your Pokemon in that region!!!</p>
-          <Link className="btn btn-primary"  to={'/regions/' + region.id} >{region.name}</Link> 
+      <div className="card w-100 p-3;" key={'region-card-' + region.id}>
+        <div className="card-body w-100 p-3">
+          <h5 className="card-header w-100 p-3">{region.name}</h5>
+          <p className="card-title w-100 p-3">Go see your Pokemon in that region!!!</p>
+          <Link className="btn btn-primary" to={'/regions/' + region.id} >{region.name}</Link> 
         </div>
       </div>
               )

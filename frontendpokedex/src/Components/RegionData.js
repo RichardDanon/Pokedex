@@ -4,19 +4,19 @@ import { Link, useParams } from "react-router-dom";
 
 function RegionData() {
 
-  const [region, setRegion] = useState([]);
-  const [formErrorMessage, setFormErrorMessage] = useState("");
-  const [error, setError] = useState(false);
+    const [region, setRegion] = useState({ pokemon: [] })
   const { id } = useParams();
 
 
   const loadRegionFromAPI = ()=>{
+    console.log("REGION ID: " + id);
+
     axios.get("http://localhost:3000/api/regions/" + id)
         .then(function(response){
 
         if(response.status === 200){
 
-            const regionData = response.data.id;
+            const regionData = response.data;
 
             setRegion(regionData);
         }
@@ -35,9 +35,14 @@ function RegionData() {
   },[])
 
   return (
-    <>
-
-    </>
+    <ul className="list-group w-100 p-3">
+        {
+          region.pokemon.map(pokemon => {
+              return(
+            <li className="list-group-item active p-3"  key={'region-card-' + pokemon.region.id}>{pokemon.name}</li>
+              )})
+          }
+    </ul>
   );
 }
 
