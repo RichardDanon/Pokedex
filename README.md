@@ -47,11 +47,10 @@ The Type enity has no acces to the information of any of the other classes it on
 
 ### Database Design: Entity-Relationship Diagram
 
+![image](https://user-images.githubusercontent.com/104465518/209457283-ed97c295-b802-4dff-b4c6-d12fa0374d3e.png)
+
 
 ### End-points documentation for your backend
-
-
-### Screenshots of the Web Application frontend explaining the features of the app
 
 #### Get POKEMON Request api
 
@@ -80,5 +79,21 @@ The Type enity has no acces to the information of any of the other classes it on
 #### DELETE Request
 
 ![image](https://user-images.githubusercontent.com/104465518/209457195-f0b78d2c-04fe-4fa2-b507-f8cea75a160f.png)
+
+
+### Screenshots of the Web Application frontend explaining the features of the app
+
+#### POkemons Page
+
+![image](https://user-images.githubusercontent.com/104465518/209457248-8e209aef-2aaf-4ab9-b1b6-dfd94ab61905.png)
+
+#### Regions Page
+
+![image](https://user-images.githubusercontent.com/104465518/209457255-13665315-9dea-4c23-99db-514af908354e.png)
+
+#### Pokemon Wihtin a region page
+
+![image](https://user-images.githubusercontent.com/104465518/209457271-a4e75298-9082-4ddd-a7b7-599c2fc59536.png)
+
 
 
