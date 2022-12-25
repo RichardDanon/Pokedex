@@ -23,3 +23,16 @@ The front end was built with the help of react router to efficiently switch betw
 a new page everytime.
 in the front end which was coded in Javascript and css axios was in charge of sending and handling the requests to the api.
 
+###  Runing the project
+
+Running the project is quite simple since it is not being hosted anywhere you simply need to run the backend code that was done in intelije.
+Once sprinboot has started and the database is running acces the front end and you can start using the application to complete the desired tasks.
+
+### Challeges Faced
+
+The PUT and POST request were the part of the hardest things for me to do in this project. 
+However if I had to mention the most time consumming thing was getting the hang of react router their tutorial was weird and the css was so broken I had to 
+give up after 5h of attempts in order to advance as much as i could in my project.
+Thankfully i found a few simple videos that explained the base on react router which aloid me to switch states in javascript.
+
+## Design
