@@ -36,3 +36,22 @@ give up after 5h of attempts in order to advance as much as i could in my projec
 Thankfully i found a few simple videos that explained the base on react router which aloid me to switch states in javascript.
 
 ## Design
+
+###  Explanation behind the classes structure of the projects
+
+In my project the entities are composed of types, pokemon and region.
+Pokemon being the main entity has a many to one relationship with the Region which allows the regions to keep track of all the pokemons that are withing them.
+Pokemon has many one to one relationships with types more preciseley one with primary typoe and another with secondary type which are all stored 
+within the type entity.
+The Type enity has no acces to the information of any of the other classes it only knows about its own variable and can be used by the pokemon.
+
+### Database Design: Entity-Relationship Diagram
+
+
+### End-points documentation for your backend
+
+
+### Screenshots of the Web Application frontend explaining the features of the app
+
+
+
