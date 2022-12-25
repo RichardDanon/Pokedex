@@ -2,7 +2,7 @@ import axios from "axios";
 import {useEffect, useState} from 'react';
 import RegionSelect from "./RegionSelect";
 import TypeSelect from "./TypeSelect";
-import { Form } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 
 function Pokemon() {
 
@@ -76,50 +76,26 @@ function Pokemon() {
 
     }
 
-    return (
-      <>
-        <div id="contact">
-            <div className="detail">
-            <div style={{display: "flex"}}>
-                <img
-                    key={pokemons.id}
-                    src={pokemons.data || null} />
-            </div>
-
-            <div>
-                <h1>
-                    {pokemons.first || pokemons.last ? (
-                        <>
-                            {pokemons.first} {pokemons.last}
-                        </>
-                    ) : (
-                        <i>No Name</i>
-                    )}{" "}
-                </h1>
-            </div>
-
-            <div>
-                <form action="edit">
-                    <button type="submit">Edit</button>
-                </form>
-                <form
-                    method="post"
-                    action="destroy"
-                    onSubmit={(event) => { {
-                        event.preventDefault();
-                    }
-                    }}
-                >
-                    <TypeSelect />
-                    <RegionSelect />
-                    <button type="submit">Delete</button>
-                </form>
-            </div>
-            </div>
+  return (
+    <div className='backGround'>
+          {
+          pokemons.map(pokemon => {
+              return(
+      <div className="card w-100 p-3;" key={'pokemon-card-' + pokemon.id}>
+        <div className="card-body w-100 p-3">
+          <h5 className="card-header w-100 p-3">{pokemon.name}</h5>
+          <p className="card-title w-100 p-3" style={{backgroundColor: pokemon.primaryType.color }}>{pokemon.primaryType.name}</p>
+          { pokemon.secondaryType != null &&
+          <p className="card-title w-100 p-3" style={{backgroundColor: pokemon.secondaryType.color }}>{pokemon.secondaryType.name}</p>
+          }
+          <Link className="btn btn-primary" to={'/regions/' + pokemon.region.id} >{pokemon.region.name}</Link> 
         </div>
-        
-        </>
-    );
-}
+      </div>
+              )
+          })
+          }
+    </div>
+  );
+  }
   
   export default Pokemon;

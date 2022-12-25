@@ -36,10 +36,11 @@ function RegionData() {
 
   return (
     <ul className="list-group w-100 p-3">
+        <li className="list-group-item active p-3" >{region.name}</li>
         {
           region.pokemon.map(pokemon => {
               return(
-            <li className="list-group-item active p-3"  key={'region-card-' + pokemon.region.id}>{pokemon.name}</li>
+            <li className="list-group-item p-3"  key={'region-card-' + pokemon.region.id}>{pokemon.name}</li>
               )})
           }
     </ul>
