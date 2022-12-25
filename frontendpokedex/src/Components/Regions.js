@@ -1,13 +1,14 @@
 import axios from "axios";
 import {useEffect, useState} from 'react';
+import { Link } from "react-router-dom";
 
 function Region() {
 
-  const [Regions, setRegions] = useState([]);
+  const [regions, setRegions] = useState([]);
   const [formErrorMessage, setFormErrorMessage] = useState("");
   const [error, setError] = useState(false);
 
-  const loadRegionssFromAPI = ()=>{
+  const loadRegionsFromAPI = ()=>{
     axios.get("http://localhost:3000/api/regions/")
     .then(function(response){
 
@@ -28,14 +29,13 @@ function Region() {
 }
 
   useEffect(()=>{
-    loadRegionssFromAPI();
+    loadRegionsFromAPI();
   },[])
 
-    return (
-      <div className="Region">
-        
-      </div>
-    );
+  return (
+    <>
+    </>
+  );
   }
   
   export default Region;
