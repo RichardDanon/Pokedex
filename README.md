@@ -53,5 +53,32 @@ The Type enity has no acces to the information of any of the other classes it on
 
 ### Screenshots of the Web Application frontend explaining the features of the app
 
+#### Get POKEMON Request api
+
+![image](https://user-images.githubusercontent.com/104465518/209457088-2cee6090-2c77-40a2-bcad-5799e40d8dd8.png)
+
+#### Get POKEMON Request FrontEnd 
+
+![image](https://user-images.githubusercontent.com/104465518/209457094-4e26c286-c650-487c-ab55-0435d08f6e6e.png)
+
+#### Get Regions Request 
+
+![image](https://user-images.githubusercontent.com/104465518/209457135-4578e995-cce5-4f35-ac2b-db2ad7eb1946.png)
+
+#### Get Types Request  
+
+![image](https://user-images.githubusercontent.com/104465518/209457145-27de16d4-ed57-4ab1-961c-22f30e76c8c8.png)
+
+#### POST Request
+
+![image](https://user-images.githubusercontent.com/104465518/209457167-b0b278ed-2e3e-45a8-a0d1-8f7095e3e9e1.png)
+
+#### PUT Request
+
+![image](https://user-images.githubusercontent.com/104465518/209457188-af33d498-089b-454b-bbcd-228e016a9b1d.png)
+
+#### DELETE Request
+
+![image](https://user-images.githubusercontent.com/104465518/209457195-f0b78d2c-04fe-4fa2-b507-f8cea75a160f.png)
 
 
